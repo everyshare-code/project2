@@ -1,0 +1,311 @@
+/* Common styles shared by both pages */
+@media (max-width: 768px) {
+	.content-wrapper {
+	  margin: 1em auto;
+	  margin-top: 10%;
+	  margin-bottom:20%;
+	  width: 100%;
+	}
+	
+	#bbs-footer {
+		margin-bottom:10em;
+		width:100%;
+	}
+}
+
+@media (min-width: 769px) {
+	.content-wrapper {
+	  margin: 1em auto;
+	  margin-top: 10%;
+	  max-width: 50%;
+	}
+	#bbs-footer {
+		bottom:0;
+		width:100%;
+	}
+}
+
+
+
+.content-wrapper{
+	transition: height 0.5s ease-out;
+}
+
+
+
+
+
+body {
+	font-family: 'Montserrat Alternates', sans-serif !important;
+	min-height: 100vh;
+}
+
+input {
+  font-size: 1em !important;
+}
+
+textarea {
+  font-size: 1em !important;
+}
+
+p {
+  color: black;
+}
+
+.card-body-img {
+	border-radius:0;
+	border:0;
+}
+
+.content {
+	overflow:hidden;
+}
+
+.f-black {
+	color:black !important;
+}
+
+#more-link {
+	text-align:left !important;
+}
+
+
+.search-click {
+	background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktc2VhcmNoIiB2aWV3Qm94PSIwIDAgMTYgMTYiPgogIDxwYXRoIGQ9Ik0xMS43NDIgMTAuMzQ0YTYuNSA2LjUgMCAxIDAtMS4zOTcgMS4zOThoLS4wMDFjLjAzLjA0LjA2Mi4wNzguMDk4LjExNWwzLjg1IDMuODVhMSAxIDAgMCAwIDEuNDE1LTEuNDE0bC0zLjg1LTMuODVhMS4wMDcgMS4wMDcgMCAwIDAtLjExNS0uMXpNMTIgNi41YTUuNSA1LjUgMCAxIDEtMTEgMCA1LjUgNS41IDAgMCAxIDExIDB6Ii8+Cjwvc3ZnPg==');
+	background-repeat:no-repeat;
+  border: 0;
+  outline: none;
+  background-size: 30%;
+  background-position: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding-left:40px;
+  transition: all 0.5s;
+}
+.search-click:focus {
+	background-image: none;
+  width: 230px;
+  padding-left: 30px;
+  border-radius:9999px;
+}
+.search-click {
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+}
+.search-click input {
+background-image: none;
+  background: transparent;
+  border: 1px solid #ccc;
+  outline: none;
+  position: absolute;
+  width: 230px;
+  height: 40px;
+  left: 0%;
+  padding: 10px;
+}
+
+#bbs-content-write {
+	height:3em;
+}
+
+.expandright {
+	left: auto;
+	right: 49px; /* Button width-1px */
+}
+
+.expandright:focus {
+	padding: 0 0 0 16px;
+}
+
+.card-body {
+	padding:0;
+	border-radius:0;
+}
+
+.card-header-postdate,.card-header-profile-header{
+	display: grid;
+    place-items: center;
+}
+
+.dropdown-item {
+  font-size: 0.7em;
+  color: #777777;
+}
+
+.nav-logo img {
+  padding-top: 0;
+  margin-top: 0;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.modal-content {
+	border: 0px;
+	background-color:transparent;
+}
+
+.btn-link {
+	font-size: 0.5em;
+}
+
+.btn-more {
+	border: 0px;
+}
+
+.navbar {
+  background-color: #64A9FA!important;
+}
+
+/* Rest of the common styles */
+
+/* Styles specific to index.jsp */
+#image-display {
+  width: 100%;
+}
+
+#modal-more {
+	font-size:0.9em;
+}
+
+#bbs-encoded-file-write {
+	border:0px !important;
+}
+
+#image-container {
+  border: 0;
+  padding: 0;
+  color: #555;
+}
+
+.card-text {
+  font-size: 0.9em;
+}
+
+.card-textarea {
+	height:200px;
+}
+
+#btn-update {
+	background-color:#2196F3;
+	transition: background-color 0.3s ease;
+	color:white;
+}
+
+#btn-update:hover {
+	 background-color: rgba(255, 255, 255, 0.8);
+	 color:#555;
+}
+
+#btn-delete {
+	background-color: #E53935;
+	color:white;
+}
+
+#btn-delete:hover {
+	background-color: white;
+	color:#555;
+}
+
+
+#btn-close {
+	background-color:#666;
+	color:white;
+}
+
+#btn-close:hover {
+	background-color:white;
+	color:#555;
+}
+
+#btn-write {
+	font-size:1em;
+}
+
+#bottomModal {
+	bottom:5px;
+}
+
+.card-img-top {
+  width: 100%;
+}
+
+.card-like {
+	width:25px;
+	height:auto;
+}
+
+.card-body-tag-container {
+  padding: 0 1em;
+}
+
+.card-container {
+	width: 100%;
+}
+
+.card-emoticon {
+	width:20px;
+	height:auto;
+	transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.bbs-container {
+	height:0%;
+	z-index:-1;
+}
+
+@keyFrames appear {
+	0%{
+		opacity:0;
+	}
+	
+	100% {
+		opacity:1;
+	}
+
+}
+
+@keyframes move_ {
+    0% {
+    	top:-100px;
+        height: 0;
+    }
+    
+    100% {
+    	top:0;
+        height: 100%;
+    }
+}
+
+
+
+@keyFrames move {
+	0%{
+		height:300px;
+		opacity:1;
+		z-index: 0;
+		top:0;
+	}
+	
+	100% {
+		height:0;
+		opacity:0;
+		z-index: -9999;
+		top:-150px;
+	}
+}
+
+.card-emoticon:hover {
+	fill:#64A9FA;
+	filter: invert(60%) sepia(46%) saturate(1898%) hue-rotate(188deg) brightness(102%) contrast(96%);
+	transform: scale(1.2);
+}
+
+.card-footer {
+	background-color:white;
+	
+}
+
+/* Rest of the styles for index.jsp */
+/* ... */

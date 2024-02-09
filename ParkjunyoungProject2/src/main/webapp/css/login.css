@@ -1,0 +1,51 @@
+@charset "UTF-8";
+.custom-textarea {
+    height: 100px; 
+}
+				
+.center-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% of the viewport height */
+}
+
+.custom-form {
+    max-width: 300px; /* Adjust the max-width as needed */
+	width: 100%;
+}
+
+#logo {
+	border:0px;
+	height:50%;
+}
+
+#div-logo {
+	border:0px;
+}
+
+#join-btn {
+	border:0px;
+	text-decoration:none;
+    color: #777777;
+    margin-right: 2em;
+    font-size: 0.9em;
+}
+
+#join-btn:hover {
+	text-decoration:none;
+    color: #64A9FA;
+}
+
+#login-submit {
+    background-color: #64A9FA;
+    color:white;
+    border: 0px;
+}
+
+#login-submit:hover {
+    background-color: white;
+    color: #64A9FA;
+}
+
+

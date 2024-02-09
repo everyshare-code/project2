@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+html {
+    font-size: 16px; /* 루트 요소의 기본 폰트 크기 설정 */
+  }
+
+  body {
+    font-size: 1rem !important; /* 폰트 크기를 루트 요소의 1.2배로 설정 */
+  }
+
+  .form-select {
+	font-size: 0.9rem;
+  }
+ 
+ #self-image {
+ 	width:100px !important;
+ 	height:100px !important;
+ }
+ 
+ #img-init-btn {
+ 	position: absolute;
+ 	top: 0;
+ 	right: 0;
+ }
+
+.input-group-text {
+	background-color: #64A9FA;
+	color:aliceblue;
+	font-size: 0.9rem;
+	padding: 6px 8px
+}
+			
+.center-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% of the viewport height */
+	max-width: 400px;
+}
+
+.custom-justify {
+    justify-content: space-between;
+}
+
+.form-check-inline {
+    display: flex;
+    align-items: center;
+}
+
+.custom-radio {
+	display: flex;
+	justify-content: center;
+}
+
+.custom-radio .form-check {
+	margin-right: 20px; /* 원하는 간격으로 조절 */
+}
+
+.form-check-inline .form-check-input {
+    margin-right: 8px; /* 원하는 간격으로 조절 */
+	
+}
+
+.form-check-label {
+	font-size: 1em;
+}
+
+.col-md-4 {
+	vertical-align: baseline;
+}
+
+.form-text {
+	margin:0 0 1.5em 0;
+	height: 1em;
+}
+
+
+
+
+#self-image {
+	max-width: 40%;  /*이미지의 최대 너비를 부모 요소의 100%로 설정*/ 
+	height: auto;     /*이미지의 높이를 자동으로 조정하여 가로 세로 비율 유지*/ 
+	display: block;  /* 인라인 요소 간 여백 제거 */
+	margin: 0 auto;  /* 가운데 정렬을 위한 마진 설정 (선택 사항) */
+	border: 0px;
+	cursor: pointer;
+}
+
+#self-image-div {
+	position:relative;
+}
+
+.btn-close {
+	position: absolute;
+	top: -0.8em;
+	right: 6em;
+}
+
+
+.btn {
+	background-color: #64A9FA;
+	border: 0px;
+}
+
+#floatingTextarea2 {
+	height: 150px;
+}
+
+#file-input {
+	display: none;
+}
+
+@keyframes blink-text {
+	50% {
+		opacity: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.custom-form {
+		width: 80%;
+		margin: auto;
+	}
+
+	.form-label {
+		margin-bottom: 0.5rem;
+	}
+}

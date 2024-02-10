@@ -60,9 +60,7 @@ public class LoginFilter implements Filter{
 					JWTOkens.removeToken(request, response);
 					loginFail(resp);
 				}
-			}
-					
-			
+			}		
 		}
 		filter.doFilter(req, resp);
 	}

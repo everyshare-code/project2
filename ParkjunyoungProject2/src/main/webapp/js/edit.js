@@ -58,18 +58,17 @@ window.addEventListener('DOMContentLoaded',function() {
 	    }else if(inters.length==0){ //관심사항 미선택
 	        notValidElement=intersMsg;
 	    }else if(education.selectedIndex==0){ //학력사항 미선택
-			notValidElement=educationMsg;
+		notValidElement=educationMsg;
 	    }else if(!password.value.match(passwordPattern)){ //비밀번호 패턴 불일치
-			notValidElement=passwordMsg;
-			idx=1;
+		notValidElement=passwordMsg;
+		idx=1;
 	    }
 	    
 	    if(selfImage.src==window.location.origin+'/images/profile-basic-board.svg') encodedFile.value='';
 	    
-		failedText(notValidElement,idx,e.target);
-		e.preventDefault();
-		return;
-	
+	    failedText(notValidElement,idx,e.target);
+	    e.preventDefault();
+	    return;
 	};
 	
 	closeBtn.addEventListener('click',()=>{

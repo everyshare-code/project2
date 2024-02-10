@@ -63,7 +63,6 @@ public class MemberService {
 	
 	public MemberDTO memberUpdate(HttpServletRequest req) {
 		MemberDAO dao=new MemberDAO(req);
-		
 		String username=req.getParameter("username");
 		String[] fileInfo=null;
 		String filename=null;
@@ -73,11 +72,6 @@ public class MemberService {
 			filename=fileInfo[1];
 			contentType=fileInfo[0];
 		}
-//		else {
-//			fileInfo=req.getParameter("savedFile").split(",");
-//			filename=fileInfo[1];
-//			contentType=fileInfo[0];
-//		}
 		String password=req.getParameter("password");
 		String inters=Arrays.stream(req.getParameterValues("inters")).collect(Collectors.joining(","));
 		String education=req.getParameter("education");
@@ -94,7 +88,6 @@ public class MemberService {
 		
 		int affected=dao.update(dto);
 		dao.close();
-		System.out.println("affected="+affected);
 		return affected==0?null:dto;
 	}
 	

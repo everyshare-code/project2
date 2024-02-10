@@ -21,12 +21,10 @@ public class CheckIdController extends HttpServlet{
 	private MemberService service;
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("요청");
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+						throws ServletException, IOException {
 		service=(MemberService)getServletContext().getAttribute("service");
-		
 		MemberDTO dto=service.memberSelectOne(req);
-		System.out.println(dto);
 		ObjectMapper mapper=new ObjectMapper();
 		mapper.writeValue(resp.getWriter(), dto);
 		

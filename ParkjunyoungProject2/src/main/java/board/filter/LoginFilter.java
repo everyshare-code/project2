@@ -37,8 +37,6 @@ public class LoginFilter implements Filter{
 		MemberService service=(MemberService)request.getServletContext().getAttribute("service");
 		String accessToken=JWTOkens.getToken(request, req.getServletContext().getInitParameter("ACCESS"));
 		String refreshToken=JWTOkens.getToken(request, req.getServletContext().getInitParameter("REFRESH"));
-		System.out.println("accessToken="+accessToken);
-		System.out.println("refreshToken="+refreshToken);
 		if(!accessToken.isEmpty()) {
 			int accessVerifyStatus=JWTOkens.verifyToken(accessToken,JWTOkens.ACCESS);
 			switch (accessVerifyStatus) {

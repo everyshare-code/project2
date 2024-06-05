@@ -17,9 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/check-id.do")
 public class CheckIdController extends HttpServlet{
-	
 	private MemberService service;
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 						throws ServletException, IOException {
@@ -27,6 +25,5 @@ public class CheckIdController extends HttpServlet{
 		MemberDTO dto=service.memberSelectOne(req);
 		ObjectMapper mapper=new ObjectMapper();
 		mapper.writeValue(resp.getWriter(), dto);
-		
 	}
 }

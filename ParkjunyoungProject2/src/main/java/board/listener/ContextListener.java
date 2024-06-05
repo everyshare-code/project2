@@ -18,7 +18,7 @@ public class ContextListener implements ServletContextListener{
 	public void contextInitialized(ServletContextEvent sce) {
 		try {
 			Context ctx = new InitialContext();
-			DataSource source=(DataSource)ctx.lookup(sce.getServletContext().getInitParameter("JNDI-ROOT"));
+			DataSource source=(DataSource)ctx.lookup(sce.getServletContext().getInitParameter("JNDI_ROOT"));
 			sce.getServletContext().setAttribute("DataSource", source);
 			sce.getServletContext().setAttribute("service", new MemberService());
 			sce.getServletContext().setAttribute("bbsService", new BBSService());

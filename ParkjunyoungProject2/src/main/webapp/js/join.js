@@ -136,7 +136,6 @@ window.addEventListener('DOMContentLoaded',function() {
 					isDuplicate=false;
 					successText(usernameMsg);
 				}
-				
 			})
 			.catch(err=>console.log(err));
 	    }else{

@@ -47,8 +47,10 @@ public class BBSService {
 			AsyncContext async=req.startAsync();
 			async.start(()->{
 				try {
-					String objects=ImageVision.detectLocalizedObjects(req.getParameter("bbs-encoded-file-write").toString());
-					String texts=ImageVision.detectText(req.getParameter("bbs-encoded-file-write").toString());
+					String objects=ImageVision.detectLocalizedObjects(
+							req.getParameter("bbs-encoded-file-write").toString());
+					String texts=ImageVision.detectText(
+							req.getParameter("bbs-encoded-file-write").toString());
 					//감지된 객체가 있을 경우 한글 번역 값 추가
 					if(objects.length()>0) objects+=TranslateText.translateText(objects);
 					//감지된 텍스트가 있을 경우

@@ -108,8 +108,11 @@ public class MemberService {
 		Cookie refreshCookie=null;
 		Map<String,Object> payload=new HashMap<>();
 		payload.put("username", username);
-		String accessToken=JWTOkens.createToken(username, payload, 1000*60*30, JWTOkens.ACCESS);
-		accessCookie=new Cookie(req.getServletContext().getInitParameter("ACCESS"),accessToken);
+		String accessToken=JWTOkens.createToken(username, payload, 
+				1000*60*30, JWTOkens.ACCESS);
+		accessCookie=new Cookie(
+				req.getServletContext().getInitParameter("ACCESS"),
+				accessToken);
 		accessCookie.setHttpOnly(true);
 		accessCookie.setSecure(true);
 		accessCookie.setMaxAge(60*60);
@@ -117,15 +120,15 @@ public class MemberService {
 		res.addCookie(accessCookie);
 		
 		if(status==JWTOkens.ACCESS) {
-			String refreshToken=JWTOkens.createToken(username, payload, 1000*60*60*24, JWTOkens.REFRESH);
-			refreshCookie=new Cookie(req.getServletContext().getInitParameter("REFRESH"),refreshToken);
+			String refreshToken=JWTOkens.createToken(username, payload, 
+					1000*60*60*24, JWTOkens.REFRESH);
+			refreshCookie=new Cookie(
+					req.getServletContext().getInitParameter("REFRESH"),
+					refreshToken);
 			refreshCookie.setHttpOnly(true);
 			refreshCookie.setSecure(true);
 			refreshCookie.setMaxAge(60*60*24);
 			res.addCookie(refreshCookie);
 		}
-		
 	}
-	
-	
 }

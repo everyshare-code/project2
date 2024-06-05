@@ -33,7 +33,8 @@ public class LoginController extends HttpServlet{
 	}
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
 		service=(MemberService)req.getServletContext().getAttribute("service");
 		MemberDTO dto=null;
 		if(req.getAttribute("username")==null) {
@@ -50,6 +51,7 @@ public class LoginController extends HttpServlet{
 		
 		service.issueTokens(req,resp,JWTOkens.ACCESS);
 	
-		resp.sendRedirect(req.getContextPath()+BoardUtil.getPath(PathKeys.INDEX.getValue()));
+		resp.sendRedirect(req.getContextPath()
+				+BoardUtil.getPath(PathKeys.INDEX.getValue()));
 	}
 }

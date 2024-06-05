@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import board.member.model.MemberDAO;
 import board.member.model.MemberDTO;
 import board.service.MemberService;
@@ -31,7 +30,6 @@ public class LoginFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain filter)
 			throws IOException, ServletException {
-		
 		request=(HttpServletRequest)req;
 		response=(HttpServletResponse)resp;
 		MemberService service=(MemberService)request.getServletContext().getAttribute("service");

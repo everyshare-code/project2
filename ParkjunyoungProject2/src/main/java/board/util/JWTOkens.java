@@ -11,12 +11,12 @@ import javax.crypto.SecretKey;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.Cookie;
@@ -25,9 +25,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class JWTOkens {
-	
-	
-	
 	private static SecretKey accessKey;
 	private static SecretKey refreshKey;
 	private static final String KEY_PATH="/resources/tokens";//확장자는 생략(.properties)
@@ -39,14 +36,23 @@ public class JWTOkens {
 	public static final int UNSIGNED=300;
 	public static final int EXPIRED=400;
 	
+//	static {
+//		ResourceBundle resource=ResourceBundle.getBundle(KEY_PATH);
+//		String accesskey = resource.getString(ACCESS_KEY);
+//		byte[] secret=Base64.getEncoder().encodeToString(accesskey.getBytes()).getBytes(StandardCharsets.UTF_8);
+//		accessKey= Keys.hmacShaKeyFor(secret);
+//		String refreshkey = resource.getString(REFRESH_KEY);
+//		secret=Base64.getEncoder().encodeToString(refreshkey.getBytes()).getBytes(StandardCharsets.UTF_8);
+//		refreshKey= Keys.hmacShaKeyFor(secret);
+//	}	
 	
 	static {
 		ResourceBundle resource=ResourceBundle.getBundle(KEY_PATH);
 		String accesskey = resource.getString(ACCESS_KEY);
-		byte[] secret=Base64.getEncoder().encodeToString(accesskey.getBytes()).getBytes(StandardCharsets.UTF_8);
+		byte[] secret=Base64.getDecoder().decode(accesskey);
 		accessKey= Keys.hmacShaKeyFor(secret);
 		String refreshkey = resource.getString(REFRESH_KEY);
-		secret=Base64.getEncoder().encodeToString(refreshkey.getBytes()).getBytes(StandardCharsets.UTF_8);
+		secret=Base64.getDecoder().decode(refreshkey);
 		refreshKey= Keys.hmacShaKeyFor(secret);
 	}	
 	
